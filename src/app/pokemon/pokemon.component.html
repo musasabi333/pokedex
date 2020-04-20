@@ -1,0 +1,21 @@
+<h1>#{{pokemon.id | number: '3.0'}} {{pokemon.name}}</h1>
+
+<div>
+    <span *ngFor="let type of pokemon.types">
+        <span pokeType [type]="type.type.name">{{type.type.name}}</span>
+    </span>
+</div>
+
+<h2>Info</h2>
+<div class="info">
+    <img [src]="pokemon.sprites.front_default"/>
+    {{pokemon.flavorText}}
+</div>
+
+<h2>Stats</h2>
+<table>
+    <tr *ngFor="let stat of pokemon.stats.reverse()">
+        <td>{{stat.stat.name | statName}}</td>
+        <td>{{stat.base_stat}}</td>
+    </tr>
+</table>

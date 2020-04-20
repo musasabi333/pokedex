@@ -1,0 +1,7 @@
+<div class="pokemon-list">
+  <div class="pokemon" *ngFor="let pokemon of pokemonList; let i = index;" (click)="selectPokemon(i)">#{{pokemon.id | number: '3.0'}} {{pokemon.name}}</div>
+</div>
+
+<poke-pokemon *ngIf="selectedPokemon !== undefined" [pokemon]="selectedPokemon"></poke-pokemon>
+
+<div *ngIf="!dataLoaded" class="loading-data"></div>
